@@ -1,7 +1,7 @@
 local aliases  = require("util.aliases")
 local vmGen    = require("codegen.vm")
 local encode   = require("util.encode")
-local deadcode = require("passes.deadcode")
+local deadcode = require("passes.Nop")
 local cfg      = require("config")
 
 local function randSep()
