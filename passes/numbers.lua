@@ -12,7 +12,7 @@ local function oNum(n)
     else
         local c = math.random(1, 10)
         local b = math.random(c+1, c+20)
-        return string.format("(%d-(%d-%d))", n + (b - c), b, c)
+        return string.format("(%d-(%d-%d))", n + (b-c), b, c)
     end
 end
 
@@ -20,7 +20,6 @@ return function(ast)
     walker.walk(ast, {
         number = function(tok)
             local n = tonumber(tok.value)
-            -- This will Obfuscate only Integers --
             if n and math.floor(n) == n and n >= 1 and n <= 99999 and not tok.value:find("[xX%.]") then
                 return {type="raw", value=oNum(n)}
             end
