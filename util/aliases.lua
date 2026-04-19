@@ -1,0 +1,26 @@
+-- based on luaobfuscator.com --
+return function()
+    return table.concat({
+        "local v0=tostring;",
+        "local v1=tonumber;",
+        "local v2=string.byte;",
+        "local v3=string.char;",
+        "local v4=string.sub;",
+        "local v5=string.gsub;",
+        "local v6=string.rep;",
+        "local v7=string.len;",
+        "local v8=table.concat;",
+        "local v9=table.insert;",
+        "local v10=math.floor;",
+        "local v11=math.max;",
+        "local v12=math.min;",
+        "local v13=math.abs;",
+        "local v14=pcall;",
+        "local v15=select;",
+        "local v16=unpack or table.unpack;",
+        "local v17=setmetatable;",
+        "local v18=getmetatable;",
+        "local v19=getfenv or function()return _ENV;end;",
+        "local v20=newproxy or function()return setmetatable({},{});end;",
+    }, "")
+end
