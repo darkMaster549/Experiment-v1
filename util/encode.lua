@@ -1,11 +1,11 @@
 local M = {}
 
-function M.encode(source, layerOffset)
+function M.encode(source, layerOffset, marker, sep)
     local o = {}
     for i = 1, #source do
-        o[i] = source:byte(i) + layerOffset
+        o[i] = tostring(source:byte(i) + layerOffset)
     end
-    return o
+    return marker .. table.concat(o, sep)
 end
 
 return M
