@@ -43,11 +43,14 @@ return function(ast, transformed, layerNum)
     decCode = decCode .. "local _d=function()local o={};local i=1;local fi=i;while fi<=#_p2 and string.sub(_p2,fi,fi+#_sk-1)~=_sk do fi=fi+1;end;local _key=tonumber(string.sub(_p2,1,fi-1));i=fi+#_sk;while i<=#_p2 do local j=i;while j<=#_p2 and string.sub(_p2,j,j+#_sk-1)~=_sk do j=j+1;end;local n=tonumber(string.sub(_p2,i,j-1));if n then o[#o+1]=string.char(_bx(n-_loff,_key))end;i=j+#_sk;end;return table.concat(o);end;"
 
     local vmCode, xn = vmGen()
+    assert(xn, "vmGen did not return xn")
 
-    return aliases()
+    local output = aliases()
         .. vmCode
         .. deadcode(before)
         .. decCode
         .. deadcode(after)
         .. xn .. "(_d())"
+
+    return output
 end
