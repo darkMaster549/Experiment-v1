@@ -4,10 +4,10 @@ local emitter = require("codegen.eR")
 
 -- load enabled passes --
 local passes = {}
-if cfg.passes.rename   then passes[#passes+1] = require("passes.rename")   end
-if cfg.passes.numbers  then passes[#passes+1] = require("passes.numbers")  end
-if cfg.passes.strings  then passes[#passes+1] = require("passes.strings")  end
-if cfg.passes.flatten  then passes[#passes+1] = require("passes.flatten")  end
+if cfg.passes.rename   then passes[#passes+1] = require("passes.re")   end
+if cfg.passes.numbers  then passes[#passes+1] = require("passes.num")  end
+if cfg.passes.strings  then passes[#passes+1] = require("passes.str")  end
+if cfg.passes.flatten  then passes[#passes+1] = require("passes.CFF")  end
 -- deadcode is handled inside emitter, not as an AST pass --
 
 return function(source)
