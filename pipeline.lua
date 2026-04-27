@@ -1,6 +1,6 @@
 local cfg     = require("config")
 local parser  = require("ast.parser")
-local emitter = require("codegen.emitter")
+local emitter = require("codegen.eR")
 
 -- load enabled passes --
 local passes = {}
